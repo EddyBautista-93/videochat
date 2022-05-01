@@ -1,7 +1,23 @@
-import React from "react";
+import React, { FormEventHandler } from "react";
+import {  useState, useEffect } from "react";
+import { useHMSActions } from "@100mslive/react-sdk";
 import Room from "./Room";
+import * as dotenv from 'dotenv';
+
+
 
 const Login: React.FunctionComponent = () => {
+    dotenv.config();
+
+    const endpoint = process.env.ENDPOINT;
+    const hmsActions = useHMSActions();
+    const [ inputVal, setInputVal ] = useState<string>("");
+    const [ selectVal, useSelectVal ] = useState<String>("viewer");
+
+    const handleInputChange = (e) => {
+        setInputVal(e.target.value);
+    }
+
     return (
         <>
         <div className=" h-screen flex justify-center items-center bg-slate-800">
@@ -25,5 +41,4 @@ const Login: React.FunctionComponent = () => {
         </>
     )
 }
-
 export default Login;
