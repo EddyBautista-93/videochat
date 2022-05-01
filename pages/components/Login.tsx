@@ -1,4 +1,5 @@
 import React from "react";
+import Room from "./Room";
 
 const Login: React.FunctionComponent = () => {
     return (
@@ -20,6 +21,7 @@ const Login: React.FunctionComponent = () => {
             </button>
           </div>
         </div>
+        <Room/>
         </>
     )
 }
